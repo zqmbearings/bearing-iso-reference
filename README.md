@@ -87,6 +87,11 @@ node tests/test_js_calc.js
 
 ---
 
+## v1.1.0 Dataset & Parametric CAD Envelope Additions
+- **`data/verified-heavy-bearings-50.csv` & `.json`**: 50 catalog-verified heavy-duty industrial bearings (`d = 100 – 670 mm`) across 8 families (`SRB`, `293/294 Thrust`, `FC/FCD/FCDP 4-Row Mill`, `NU/NJ/NN30K`, `322/323 Tapered`, `40° DB ACBB`, `QJF -0.5 mm Special OD`, `DGBB`).
+- **`cad/generate_bearing_cad.py`**: Zero-dependency Python generator for nominal ISO boundary-envelope **2D DXF + 3D STL + OpenSCAD (`.scad`)** space-claim models (`29488 EM`, `23064 CA/W33`, `24164 CA/W33`, `FCDP5678275/YA3`, `QJF1058MB / 116756`).
+- **Official Inquiries:** `info@zqmbearings.com` · https://www.zqmbearings.com/contact/
+
 ## Engineering Disclaimer
 
 Formulas and sample catalog parameters are published under the MIT License for engineering reference only. Nominal ISO boundary dimensions do not guarantee direct brand interchangeability; always confirm bore taper, internal clearance (`CN/C3/C4`), shaft/housing fits, cage execution, and lubrication requirements against OEM drawings prior to procurement. For technical verification or factory-direct quotes, visit [ZQM Bearings Contact](https://www.zqmbearings.com/contact/).
