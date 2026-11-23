@@ -1,0 +1,22 @@
+{
+  "source": "ZQM Bearings Online Catalog (https://www.zqmbearings.com/catalog/)",
+  "disclaimer": "Nominal ISO boundary dimensions and catalog ratings for engineering reference only. Confirm fits, internal clearance, bore taper, and tolerances against OEM drawings prior to procurement.",
+  "models": [
+    { "designation": "23064 CA/W33", "family": "srb", "d_mm": 320, "D_mm": 480, "width_mm": 121, "width_symbol": "B", "cr_kn": 1960, "c0r_kn": 3850, "mass_kg": 75.6, "taper_option": "1:12 K", "url": "https://www.zqmbearings.com/products/23064-ca-w33/" },
+    { "designation": "23164 CA/W33", "family": "srb", "d_mm": 320, "D_mm": 540, "width_mm": 176, "width_symbol": "B", "cr_kn": 3050, "c0r_kn": 5500, "mass_kg": 162.0, "taper_option": "1:12 K", "url": "https://www.zqmbearings.com/products/23164-ca-w33/" },
+    { "designation": "24056 CA/W33", "family": "srb", "d_mm": 280, "D_mm": 420, "width_mm": 140, "width_symbol": "B", "cr_kn": 1880, "c0r_kn": 3800, "mass_kg": 66.4, "taper_option": "1:30 K30", "url": "https://www.zqmbearings.com/products/24056-ca-w33/" },
+    { "designation": "24164 CA/W33", "family": "srb", "d_mm": 320, "D_mm": 540, "width_mm": 218, "width_symbol": "B", "cr_kn": 3550, "c0r_kn": 6650, "mass_kg": 196.0, "taper_option": "1:30 K30", "url": "https://www.zqmbearings.com/products/24164-ca-w33/" },
+    { "designation": "23244 CA/W33", "family": "srb", "d_mm": 220, "D_mm": 400, "width_mm": 144, "width_symbol": "B", "cr_kn": 2020, "c0r_kn": 3400, "mass_kg": 80.4, "taper_option": "1:12 K", "url": "https://www.zqmbearings.com/catalog/23244-ca-w33/" },
+    { "designation": "23264 CA/W33", "family": "srb", "d_mm": 320, "D_mm": 580, "width_mm": 208, "width_symbol": "B", "cr_kn": 3900, "c0r_kn": 6900, "mass_kg": 239.0, "taper_option": "1:12 K", "url": "https://www.zqmbearings.com/catalog/23264-ca-w33/" },
+    { "designation": "240/500 CAF3/W33", "family": "srb", "d_mm": 500, "D_mm": 720, "width_mm": 218, "width_symbol": "B", "cr_kn": 4450, "c0r_kn": 9900, "mass_kg": 276.0, "taper_option": "1:30 K30", "url": "https://www.zqmbearings.com/catalog/240-500caf3-w33/" },
+    { "designation": "29426", "family": "ts", "d_mm": 130, "D_mm": 270, "width_mm": 85, "width_symbol": "H", "cr_kn": 1330, "c0r_kn": 3900, "mass_kg": 28.3, "taper_option": "cylindrical", "url": "https://www.zqmbearings.com/catalog/29426/" },
+    { "designation": "29434", "family": "ts", "d_mm": 170, "D_mm": 340, "width_mm": 103, "width_symbol": "H", "cr_kn": 1680, "c0r_kn": 5800, "mass_kg": 39.7, "taper_option": "cylindrical", "url": "https://www.zqmbearings.com/products/29434/" },
+    { "designation": "7326BM", "family": "acbb", "d_mm": 130, "D_mm": 280, "width_mm": 58, "width_symbol": "B", "cr_kn": 251, "c0r_kn": 270, "mass_kg": 17.5, "taper_option": "cylindrical", "url": "https://www.zqmbearings.com/products/7326bm/" },
+    { "designation": "7330BM", "family": "acbb", "d_mm": 150, "D_mm": 320, "width_mm": 65, "width_symbol": "B", "cr_kn": 289, "c0r_kn": 340, "mass_kg": 26.7, "taper_option": "cylindrical", "url": "https://www.zqmbearings.com/products/7330bm/" },
+    { "designation": "NU2330EM", "family": "crb", "d_mm": 150, "D_mm": 320, "width_mm": 108, "width_symbol": "B", "cr_kn": 1160, "c0r_kn": 1600, "mass_kg": 41.5, "taper_option": "cylindrical", "url": "https://www.zqmbearings.com/products/nu2330em/" },
+    { "designation": "6330M", "family": "dgbb", "d_mm": 150, "D_mm": 320, "width_mm": 65, "width_symbol": "B", "cr_kn": 274, "c0r_kn": 284, "mass_kg": 26.0, "taper_option": "cylindrical", "url": "https://www.zqmbearings.com/products/6330m/" },
+    { "designation": "32244", "family": "trb", "d_mm": 220, "D_mm": 400, "width_mm": 114, "width_symbol": "T", "cr_kn": 1340, "c0r_kn": 2210, "mass_kg": 57.4, "taper_option": "cylindrical", "url": "https://www.zqmbearings.com/products/32244/" },
+    { "designation": "QJF1064X1MB", "family": "qjf", "d_mm": 320, "D_mm": 479.5, "width_mm": 74, "width_symbol": "B", "cr_kn": 660, "c0r_kn": 1400, "mass_kg": null, "taper_option": "cylindrical (-0.5 mm special OD)", "url": "https://www.zqmbearings.com/products/qjf1064x1mb/" },
+    { "designation": "FCDP3248195/YA3", "family": "crb", "d_mm": 160, "D_mm": 240, "width_mm": 195, "width_symbol": "B", "cr_kn": 1340, "c0r_kn": 2600, "mass_kg": 33.0, "taper_option": "cylindrical (4-row mill, Fw=182 mm)", "url": "https://www.zqmbearings.com/products/fcdp3248195-ya3/" }
+  ]
+}
