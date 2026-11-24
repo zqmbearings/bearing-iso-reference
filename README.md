@@ -92,6 +92,20 @@ node tests/test_js_calc.js
 - **`cad/generate_bearing_cad.py`**: Zero-dependency Python generator for nominal ISO boundary-envelope **2D DXF + 3D STL + OpenSCAD (`.scad`)** space-claim models (`29488 EM`, `23064 CA/W33`, `24164 CA/W33`, `FCDP5678275/YA3`, `QJF1058MB / 116756`).
 - **Official Inquiries:** `info@zqmbearings.com` · https://www.zqmbearings.com/contact/
 
+## v3.0.0 Expansion — 250 Catalog-Verified Heavy Bearings & 12 Parametric CAD Envelopes (2026-11-24)
+
+- **[`data/zqm_heavy_bearings_250_iso_v3.csv`](data/zqm_heavy_bearings_250_iso_v3.csv) & [`data/zqm_heavy_bearings_250_iso_v3.json`](data/zqm_heavy_bearings_250_iso_v3.json)**: Expanded to **250 catalog-verified heavy-duty industrial rolling bearings** (`d = 240 – 1,600 mm`) spanning 7 heavy industrial families:
+  - **293 / 294 Spherical Roller Thrust** (`ISO 104`, up to `d = 1,600 mm`, including underground raise boring flagship `29488`)
+  - **240 / 241 Wide Heavy Spherical Roller** (`1:30 K30` tapered bore series, up to `d = 1,400 mm`)
+  - **222 / 223 / 230 / 231 / 232 Heavy Spherical Roller** (`1:12 K` tapered bore series, up to `d = 1,250 mm`)
+  - **FC / FCD / FCDP Four-Row Cylindrical Rolling Mill Bearings** (up to `d = 1,600 mm`)
+  - **TQO Four-Row Tapered Rolling Mill Bearings** (up to `d = 1,580 mm`)
+  - **QJF Four-Point Contact Ball Bearings** (including `-0.5 mm` special-OD housings `QJF1064X1MB` / `QJF1060X3MB`)
+  - **NU / NJ / NUP / NN30K Heavy Cylindrical & Precision Spindle Bearings** (up to `d = 1,320 mm`)
+- **Strict `null` Honesty Policy**: Any catalog row without verified load or speed ratings stores explicit `null` (JSON) / blank (CSV) — zero synthetic interpolation.
+- **[`cad/cad_12_models/manifest.json`](cad/cad_12_models/manifest.json)**: Boundary-dimension CAD manifest for 12 flagship heavy models (`d = 440 – 1,600 mm`), stamped `SIMPLIFIED ISO NOMINAL ENVELOPE ONLY — VERIFY FACTORY DRAWING`.
+- **Certified Manufacturing & Inquiries**: ZQM Bearings (Wafangdian, China) — `ISO 9001:2015` (Cert. `62725Q1152R0S`) & `ISO 14001` · **Official Engineering Desk:** `info@zqmbearings.com` · [Contact ZQM Bearings](https://www.zqmbearings.com/contact/)
+
 ## Engineering Disclaimer
 
 Formulas and sample catalog parameters are published under the MIT License for engineering reference only. Nominal ISO boundary dimensions do not guarantee direct brand interchangeability; always confirm bore taper, internal clearance (`CN/C3/C4`), shaft/housing fits, cage execution, and lubrication requirements against OEM drawings prior to procurement. For technical verification or factory-direct quotes, visit [ZQM Bearings Contact](https://www.zqmbearings.com/contact/).
