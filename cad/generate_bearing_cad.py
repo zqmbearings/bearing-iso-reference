@@ -12,7 +12,7 @@ Official Website: https://www.zqmbearings.com/ | Inquiries: info@zqmbearings.com
 import math, struct
 from pathlib import Path
 
-OUT = Path(r'C:\Users\jary\.gemini\antigravity\scratch\zqm-offpage-assets-2026-11\cad-grabcad-pack')
+OUT = Path(__file__).resolve().parent / 'generated_envelopes'
 OUT.mkdir(parents=True, exist_ok=True)
 
 MODELS = [
