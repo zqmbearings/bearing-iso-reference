@@ -1,0 +1,162 @@
+{
+  "stamp": "SIMPLIFIED ISO NOMINAL ENVELOPE ONLY — VERIFY FACTORY DRAWING | ZQM Bearings | www.zqmbearings.com | info@zqmbearings.com",
+  "count": 12,
+  "models": [
+    {
+      "designation": "294/500",
+      "slug": "294-500",
+      "series": "TS:294",
+      "d_mm": 500,
+      "D_mm": 870,
+      "B_mm": 224,
+      "files": [
+        "zqm-envelope-294-500.scad",
+        "zqm-envelope-294-500.stl",
+        "zqm-envelope-294-500.dxf"
+      ]
+    },
+    {
+      "designation": "29488",
+      "slug": "29488",
+      "series": "TS:294",
+      "d_mm": 440,
+      "D_mm": 780,
+      "B_mm": 206,
+      "files": [
+        "zqm-envelope-29488.scad",
+        "zqm-envelope-29488.stl",
+        "zqm-envelope-29488.dxf"
+      ]
+    },
+    {
+      "designation": "241/1000CAF3/W33",
+      "slug": "241-1000caf3-w3",
+      "series": "SR:241",
+      "d_mm": 1000,
+      "D_mm": 1580,
+      "B_mm": 580,
+      "files": [
+        "zqm-envelope-241-1000caf3-w3.scad",
+        "zqm-envelope-241-1000caf3-w3.stl",
+        "zqm-envelope-241-1000caf3-w3.dxf"
+      ]
+    },
+    {
+      "designation": "240/1000CAF3/W33",
+      "slug": "240-1000caf3-w3",
+      "series": "SR:240",
+      "d_mm": 1000,
+      "D_mm": 1420,
+      "B_mm": 412,
+      "files": [
+        "zqm-envelope-240-1000caf3-w3.scad",
+        "zqm-envelope-240-1000caf3-w3.stl",
+        "zqm-envelope-240-1000caf3-w3.dxf"
+      ]
+    },
+    {
+      "designation": "230/950X2CAF3/W33",
+      "slug": "230-950x2caf3-w",
+      "series": "SR:230",
+      "d_mm": 950,
+      "D_mm": 1360,
+      "B_mm": 320,
+      "files": [
+        "zqm-envelope-230-950x2caf3-w.scad",
+        "zqm-envelope-230-950x2caf3-w.stl",
+        "zqm-envelope-230-950x2caf3-w.dxf"
+      ]
+    },
+    {
+      "designation": "230/950CAF3/W33",
+      "slug": "230-950caf3-w33",
+      "series": "SR:230",
+      "d_mm": 950,
+      "D_mm": 1360,
+      "B_mm": 300,
+      "files": [
+        "zqm-envelope-230-950caf3-w33.scad",
+        "zqm-envelope-230-950caf3-w33.stl",
+        "zqm-envelope-230-950caf3-w33.dxf"
+      ]
+    },
+    {
+      "designation": "FCDP200272800A/YA6",
+      "slug": "fcdp200272800a-ya6",
+      "series": "FC:FCDP20",
+      "d_mm": 1000,
+      "D_mm": 1360,
+      "B_mm": 800,
+      "files": [
+        "zqm-envelope-fcdp200272800a-ya6.scad",
+        "zqm-envelope-fcdp200272800a-ya6.stl",
+        "zqm-envelope-fcdp200272800a-ya6.dxf"
+      ]
+    },
+    {
+      "designation": "FCDP200272800/YA6",
+      "slug": "fcdp200272800-ya6",
+      "series": "FC:FCDP20",
+      "d_mm": 1000,
+      "D_mm": 1360,
+      "B_mm": 800,
+      "files": [
+        "zqm-envelope-fcdp200272800-ya6.scad",
+        "zqm-envelope-fcdp200272800-ya6.stl",
+        "zqm-envelope-fcdp200272800-ya6.dxf"
+      ]
+    },
+    {
+      "designation": "863TQOS1169-1",
+      "slug": "863-tqos1169-1",
+      "series": "TP4:863",
+      "d_mm": 863.6,
+      "D_mm": 1169.987,
+      "B_mm": 844.55,
+      "files": [
+        "zqm-envelope-863-tqos1169-1.scad",
+        "zqm-envelope-863-tqos1169-1.stl",
+        "zqm-envelope-863-tqos1169-1.dxf"
+      ]
+    },
+    {
+      "designation": "QJF9/560X1",
+      "slug": "qjf9-560x1",
+      "series": "QJ:QJF9",
+      "d_mm": 560,
+      "D_mm": 780,
+      "B_mm": 60,
+      "files": [
+        "zqm-envelope-qjf9-560x1.scad",
+        "zqm-envelope-qjf9-560x1.stl",
+        "zqm-envelope-qjf9-560x1.dxf"
+      ]
+    },
+    {
+      "designation": "NN30/1000K",
+      "slug": "nn30-1000k",
+      "series": "DOUBLECY:NN30",
+      "d_mm": 1000,
+      "D_mm": 1420,
+      "B_mm": 308,
+      "files": [
+        "zqm-envelope-nn30-1000k.scad",
+        "zqm-envelope-nn30-1000k.stl",
+        "zqm-envelope-nn30-1000k.dxf"
+      ]
+    },
+    {
+      "designation": "293/1600",
+      "slug": "293-1600",
+      "series": "TS:293",
+      "d_mm": 1600,
+      "D_mm": 2280,
+      "B_mm": 408,
+      "files": [
+        "zqm-envelope-293-1600.scad",
+        "zqm-envelope-293-1600.stl",
+        "zqm-envelope-293-1600.dxf"
+      ]
+    }
+  ]
+}
