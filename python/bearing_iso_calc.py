@@ -199,3 +199,61 @@ def compute_relubrication_grease(od_mm: float, width_mm: float, designation: str
         "center_groove_g": round(0.005 * od_mm * width_mm, 1),
         "side_relub_g": round(0.002 * od_mm * width_mm, 1),
     }
+
+
+# ISO 286-2:2010 standard tolerances (IT5/IT6/IT7 in um) and shaft/housing deviations (um)
+_ISO286_RANGES = (
+    (30.0, 50.0),
+    (50.0, 80.0),
+    (80.0, 120.0),
+    (120.0, 180.0),
+    (180.0, 250.0),
+    (250.0, 315.0),
+    (315.0, 400.0),
+    (400.0, 500.0),
+)
+
+_ISO286_SHAFTS_UM: Dict[str, tuple] = {
+    "k5": ((13, 2), (15, 2), (18, 3), (21, 3), (24, 4), (27, 4), (29, 4), (32, 5)),
+    "k6": ((18, 2), (21, 2), (25, 3), (28, 3), (33, 4), (36, 4), (40, 4), (45, 5)),
+    "m5": ((20, 9), (24, 11), (28, 13), (33, 15), (37, 17), (43, 20), (46, 21), (50, 23)),
+    "m6": ((25, 9), (30, 11), (35, 13), (40, 15), (46, 17), (52, 20), (57, 21), (63, 23)),
+    "n6": ((33, 17), (39, 20), (45, 23), (52, 27), (60, 31), (66, 34), (73, 37), (80, 40)),
+    "p6": ((42, 26), (49, 30), (57, 35), (65, 40), (75, 46), (82, 50), (93, 57), (103, 63)),
+}
+
+_ISO286_HOLES_UM: Dict[str, tuple] = {
+    "G7": ((34, 9), (40, 10), (47, 12), (54, 14), (75, 29), (84, 32), (93, 36), (103, 40)),
+    "H7": ((25, 0), (30, 0), (35, 0), (40, 0), (46, 0), (52, 0), (57, 0), (63, 0)),
+    "J7": ((11, -14), (12, -18), (15, -20), (17, -23), (26, -20), (30, -22), (32, -25), (36, -27)),
+    "K7": ((17, -8), (20, -10), (23, -12), (27, -13), (13, -33), (16, -36), (17, -40), (18, -45)),
+}
+
+
+def compute_iso286_fit(nominal_mm: float, tolerance_class: str) -> Dict[str, object]:
+    """Compute ISO 286-2 upper/lower limit deviations (um) and limits of size (mm) for 30 < D <= 500 mm.
+
+    Supports bearing shaft fits (k5, k6, m5, m6, n6, p6) and housing bore fits (G7, H7, J7, K7).
+    """
+    if not (30.0 < nominal_mm <= 500.0):
+        raise ValueError("nominal_mm must be in (30, 500] mm for ISO 286 heavy bearing fit lookup")
+    cls = tolerance_class.strip()
+    is_shaft = cls in _ISO286_SHAFTS_UM
+    is_hole = cls in _ISO286_HOLES_UM
+    if not (is_shaft or is_hole):
+        raise ValueError(f"Unsupported ISO 286 tolerance_class: {tolerance_class}")
+
+    idx = next(i for i, (lo, hi) in enumerate(_ISO286_RANGES) if lo < nominal_mm <= hi)
+    upper_um, lower_um = (_ISO286_SHAFTS_UM[cls] if is_shaft else _ISO286_HOLES_UM[cls])[idx]
+    lo_r, hi_r = _ISO286_RANGES[idx]
+    return {
+        "nominal_mm": float(nominal_mm),
+        "tolerance_class": cls,
+        "feature_type": "shaft" if is_shaft else "housing_bore",
+        "range_mm": f">{int(lo_r)}..{int(hi_r)}",
+        "upper_dev_um": int(upper_um),
+        "lower_dev_um": int(lower_um),
+        "max_mm": round(nominal_mm + upper_um / 1000.0, 4),
+        "min_mm": round(nominal_mm + lower_um / 1000.0, 4),
+        "fit_zone_um": int(upper_um - lower_um),
+    }
