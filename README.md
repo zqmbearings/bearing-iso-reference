@@ -109,3 +109,12 @@ node tests/test_js_calc.js
 ## Engineering Disclaimer
 
 Formulas and sample catalog parameters are published under the MIT License for engineering reference only. Nominal ISO boundary dimensions do not guarantee direct brand interchangeability; always confirm bore taper, internal clearance (`CN/C3/C4`), shaft/housing fits, cage execution, and lubrication requirements against OEM drawings prior to procurement. For technical verification or factory-direct quotes, visit [ZQM Bearings Contact](https://www.zqmbearings.com/contact/).
+
+
+## v3.1.0 ISO 286 Fit Tolerances & Flagship Homepage Matrix (2026-11-27)
+
+- **ISO 286-2 Shaft & Housing Fit Calculator (`compute_iso286_fit` / `computeIso286Fit`)**:
+  - Zero-dependency Python (`python/bearing_iso_calc.py`) and Node.js (`js/bearingIsoCalc.js`) implementations covering `30 < D <= 500 mm` diameter steps for heavy bearing shaft (`k5, k6, m5, m6, n6, p6`) and housing (`G7, H7, J7, K7`) fits, returning upper/lower deviations in micrometers and millimeters.
+- **Flagship Homepage Bearing & Fit Reference CSV (`data/flagship_homepage_models_v31.csv`)**:
+  - Curated 12-model heavy-duty benchmark table (`29488 EM`, `23064 CA/W33`, `24164 CA/W33`, `FCDP5678275/YA3`, `QJF1058MB / 116756`, `23264 CA/W33`, `24056 CA/W33`, `7330BM`, `NU2330EM`, `29434`, `32244`, `NN3030K`) pairing verified ISO ratings with recommended ISO 286 mounting fits and direct product URLs.
+- **Open Hugging Face Dataset Mirror**: [zqm1/heavy-duty-industrial-bearings-iso-reference](https://huggingface.co/datasets/zqm1/heavy-duty-industrial-bearings-iso-reference) · **Substack Engineering Brief**: [zqmbearings.substack.com](https://zqmbearings.substack.com/p/heavy-bearing-engineering-brief-01)
