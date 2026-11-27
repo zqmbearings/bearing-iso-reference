@@ -115,9 +115,55 @@ function computeShaftThermalExpansion(spanMm, deltaTC, alpha = STEEL_ALPHA_PER_C
   return { spanMm, deltaTC, alphaPerC: alpha, deltaLMm, deltaLUm: deltaLMm * 1000 };
 }
 
+const ISO286_RANGES = [
+  [30, 50], [50, 80], [80, 120], [120, 180],
+  [180, 250], [250, 315], [315, 400], [400, 500],
+];
+
+const ISO286_SHAFTS_UM = {
+  k5: [[13, 2], [15, 2], [18, 3], [21, 3], [24, 4], [27, 4], [29, 4], [32, 5]],
+  k6: [[18, 2], [21, 2], [25, 3], [28, 3], [33, 4], [36, 4], [40, 4], [45, 5]],
+  m5: [[20, 9], [24, 11], [28, 13], [33, 15], [37, 17], [43, 20], [46, 21], [50, 23]],
+  m6: [[25, 9], [30, 11], [35, 13], [40, 15], [46, 17], [52, 20], [57, 21], [63, 23]],
+  n6: [[33, 17], [39, 20], [45, 23], [52, 27], [60, 31], [66, 34], [73, 37], [80, 40]],
+  p6: [[42, 26], [49, 30], [57, 35], [65, 40], [75, 46], [82, 50], [93, 57], [103, 63]],
+};
+
+const ISO286_HOLES_UM = {
+  G7: [[34, 9], [40, 10], [47, 12], [54, 14], [75, 29], [84, 32], [93, 36], [103, 40]],
+  H7: [[25, 0], [30, 0], [35, 0], [40, 0], [46, 0], [52, 0], [57, 0], [63, 0]],
+  J7: [[11, -14], [12, -18], [15, -20], [17, -23], [26, -20], [30, -22], [32, -25], [36, -27]],
+  K7: [[17, -8], [20, -10], [23, -12], [27, -13], [13, -33], [16, -36], [17, -40], [18, -45]],
+};
+
+function computeIso286Fit(nominalMm, toleranceClass) {
+  if (!(nominalMm > 30 && nominalMm <= 500)) {
+    throw new Error('nominalMm must be in (30, 500] mm');
+  }
+  const cls = String(toleranceClass || '').trim();
+  const isShaft = Object.prototype.hasOwnProperty.call(ISO286_SHAFTS_UM, cls);
+  const isHole = Object.prototype.hasOwnProperty.call(ISO286_HOLES_UM, cls);
+  if (!isShaft && !isHole) throw new Error(`Unsupported ISO 286 class: ${toleranceClass}`);
+  const idx = ISO286_RANGES.findIndex(([lo, hi]) => nominalMm > lo && nominalMm <= hi);
+  const [upperUm, lowerUm] = (isShaft ? ISO286_SHAFTS_UM[cls] : ISO286_HOLES_UM[cls])[idx];
+  const [lo, hi] = ISO286_RANGES[idx];
+  return {
+    nominalMm: Number(nominalMm),
+    toleranceClass: cls,
+    featureType: isShaft ? 'shaft' : 'housing_bore',
+    rangeMm: `>${lo}..${hi}`,
+    upperDevUm: upperUm,
+    lowerDevUm: lowerUm,
+    maxMm: Number((nominalMm + upperUm / 1000).toFixed(4)),
+    minMm: Number((nominalMm + lowerUm / 1000).toFixed(4)),
+    fitZoneUm: upperUm - lowerUm,
+  };
+}
+
 module.exports = {
   STEEL_ALPHA_PER_C,
   computeIso281Life,
   detectIso15Taper,
   computeShaftThermalExpansion,
+  computeIso286Fit,
 };
