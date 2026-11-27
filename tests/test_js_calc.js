@@ -5,6 +5,7 @@ const {
   computeIso281Life,
   detectIso15Taper,
   computeShaftThermalExpansion,
+  computeIso286Fit,
 } = require('../js/bearingIsoCalc');
 
 // 1. 23064 CA/W33 SRB ISO 281 + Grease + n*dm
@@ -43,4 +44,13 @@ assert.strictEqual(detectIso15Taper('23244 CAK30/W33').taperRatio, 'INVALID_K30_
 const te = computeShaftThermalExpansion(4500, 55);
 assert(Math.abs(te.deltaLMm - 2.84625) < 1e-5);
 
-console.log('ALL_JS_ISO_TESTS_PASSED: 5/5');
+// 6. ISO 286 shaft & housing bore tolerances
+const fitM6 = computeIso286Fit(150, 'm6');
+assert.strictEqual(fitM6.upperDevUm, 40);
+assert.strictEqual(fitM6.lowerDevUm, 15);
+assert.strictEqual(fitM6.maxMm, 150.04);
+const fitK7 = computeIso286Fit(390, 'K7');
+assert.strictEqual(fitK7.upperDevUm, 17);
+assert.strictEqual(fitK7.lowerDevUm, -40);
+
+console.log('ALL_JS_ISO_TESTS_PASSED: 6/6');
