@@ -10,6 +10,7 @@ from bearing_iso_calc import (
     compute_iso281_life,
     compute_relubrication_grease,
     compute_shaft_thermal_expansion,
+    compute_iso286_fit,
     detect_iso15_taper,
 )
 
@@ -66,6 +67,18 @@ class TestBearingIsoCalc(unittest.TestCase):
         self.assertEqual(len(data["models"]), 16)
         qjf = next(m for m in data["models"] if m["designation"] == "QJF1064X1MB")
         self.assertEqual(qjf["D_mm"], 479.5)
+
+
+    def test_iso286_shaft_and_housing_fits(self):
+        s_m6 = compute_iso286_fit(150, "m6")
+        self.assertEqual((s_m6["upper_dev_um"], s_m6["lower_dev_um"]), (40, 15))
+        self.assertEqual((s_m6["max_mm"], s_m6["min_mm"]), (150.04, 150.015))
+        s_n6 = compute_iso286_fit(320, "n6")
+        self.assertEqual((s_n6["upper_dev_um"], s_n6["lower_dev_um"]), (73, 37))
+        h_h7 = compute_iso286_fit(280, "H7")
+        self.assertEqual((h_h7["upper_dev_um"], h_h7["lower_dev_um"]), (52, 0))
+        h_k7 = compute_iso286_fit(390, "K7")
+        self.assertEqual((h_k7["upper_dev_um"], h_k7["lower_dev_um"]), (17, -40))
 
 
 if __name__ == "__main__":
